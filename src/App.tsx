@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {lazy, Suspense} from 'react';
 import './App.css';
+import ProductContextProvider from './context/ProductContextProvider';
+import {DETAILS_PATH, HOME_PATH} from "./routes";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const HomePage = lazy(() => import("./component/Homepage"));
+const Details = lazy(() => import("./component/Details"));
+
+const App = () => {
+    return (
+        <div className="App">
+            <Suspense fallback={<p>Loading........</p>}>
+                <BrowserRouter>
+                    <Switch>
+                        <ProductContextProvider>
+                            <Route exact path={HOME_PATH} component={HomePage}/>
+                            <Route exact path={`${DETAILS_PATH}/:id`} component={Details}/>
+                        </ProductContextProvider>
+                    </Switch>
+                </BrowserRouter>
+            </Suspense>
+        </div>
+    );
 }
 
 export default App;

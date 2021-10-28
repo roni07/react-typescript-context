@@ -1,0 +1,64 @@
+.AddToList {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin: 5rem auto
+}
+
+.AddToList-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 0.3rem 0
+}
+
+.Add-btn {
+    padding: 6px 0;
+    background-color: rebeccapurple;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.list {
+    width: 30rem;
+    margin: 5rem auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+.list .list-span {
+    color: #fdfdfd;
+    border-radius: 50%;
+    background-color: rgb(122 120 120);
+    padding: 0 5px;
+    margin-left: 6px;
+}
+
+.list ul {
+    padding: 0;
+}
+
+.list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    margin-bottom: 3px;
+    background-color: #dcdada;
+}
+
+.list li .li-btn {
+    height: 25px;
+    margin: auto 0;
+}
+
+.list li .li-btn button {
+    border: none;
+    height: 100%;
+    background: #4ca6a7;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
